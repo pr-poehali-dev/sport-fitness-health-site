@@ -41,6 +41,49 @@ export default function Index() {
     { title: "50 тренировок", icon: "Crown", completed: false }
   ];
 
+  const blogPosts = [
+    {
+      id: 1,
+      title: "Лучшие упражнения для домашних тренировок",
+      excerpt: "Эффективный комплекс для тренировок дома без дополнительного оборудования. Подходит для любого уровня подготовки.",
+      author: "Анна Фитнес",
+      date: "2 дня назад",
+      readTime: "5 мин",
+      category: "Тренировки",
+      image: "/img/ef8d0948-9642-4e53-aa4b-8ed1f3fa7a15.jpg"
+    },
+    {
+      id: 2,
+      title: "Правильное питание для набора мышечной массы",
+      excerpt: "Подробный гид по питанию для эффективного набора качественной мышечной массы. Расчет БЖУ и примеры меню.",
+      author: "Максим Спорт",
+      date: "5 дней назад",
+      readTime: "8 мин",
+      category: "Питание",
+      image: "/img/ef8d0948-9642-4e53-aa4b-8ed1f3fa7a15.jpg"
+    },
+    {
+      id: 3,
+      title: "Кардио или силовые: что выбрать для похудения?",
+      excerpt: "Сравниваем эффективность разных видов тренировок для жиросжигания. Научный подход к выбору программы.",
+      author: "Елена Тренер",
+      date: "1 неделя назад",
+      readTime: "6 мин",
+      category: "Похудение",
+      image: "/img/ef8d0948-9642-4e53-aa4b-8ed1f3fa7a15.jpg"
+    },
+    {
+      id: 4,
+      title: "10 мифов о фитнесе, в которые все верят",
+      excerpt: "Развенчиваем самые популярные заблуждения о тренировках и питании. Только научные факты.",
+      author: "Виктор Эксперт",
+      date: "2 недели назад",
+      readTime: "7 мин",
+      category: "Обучение",
+      image: "/img/ef8d0948-9642-4e53-aa4b-8ed1f3fa7a15.jpg"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-fitness-light via-white to-fitness-blue/10">
       {/* Header */}
@@ -55,9 +98,9 @@ export default function Index() {
             </div>
             <div className="hidden md:flex items-center space-x-6">
               <a href="#main" className="text-fitness-dark hover:text-fitness-orange transition-colors">Главная</a>
-              <a href="#workouts" className="text-fitness-dark hover:text-fitness-orange transition-colors">Тренировки</a>
               <a href="#programs" className="text-fitness-dark hover:text-fitness-orange transition-colors">Программы</a>
               <a href="#nutrition" className="text-fitness-dark hover:text-fitness-orange transition-colors">Питание</a>
+              <a href="#blog" className="text-fitness-dark hover:text-fitness-orange transition-colors">Блог</a>
               <a href="#quotes" className="text-fitness-dark hover:text-fitness-orange transition-colors">Мотивация</a>
             </div>
             <Button className="bg-gradient-to-r from-fitness-orange to-red-500 hover:from-red-500 hover:to-fitness-orange">
@@ -223,6 +266,111 @@ export default function Index() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="py-16 px-4 bg-white/50">
+        <div className="container mx-auto">
+          <div className="flex items-center justify-between mb-12">
+            <h3 className="text-3xl font-bold text-fitness-dark">
+              Блог о фитнесе
+            </h3>
+            <Button variant="outline" className="border-fitness-orange text-fitness-orange hover:bg-fitness-orange hover:text-white">
+              Все статьи
+            </Button>
+          </div>
+          
+          {/* Featured Article */}
+          <div className="mb-12">
+            <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="md:flex">
+                <div className="md:w-1/2">
+                  <img 
+                    src={blogPosts[0].image} 
+                    alt={blogPosts[0].title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                </div>
+                <div className="md:w-1/2 p-8">
+                  <Badge className="mb-4 bg-fitness-orange">{blogPosts[0].category}</Badge>
+                  <h4 className="text-2xl font-bold text-fitness-dark mb-4">{blogPosts[0].title}</h4>
+                  <p className="text-muted-foreground mb-6">{blogPosts[0].excerpt}</p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <span className="text-sm text-muted-foreground">{blogPosts[0].author}</span>
+                      <span className="text-sm text-muted-foreground">{blogPosts[0].date}</span>
+                      <span className="text-sm text-muted-foreground">{blogPosts[0].readTime}</span>
+                    </div>
+                    <Button className="bg-gradient-to-r from-fitness-orange to-red-500">
+                      Читать
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Ad Block */}
+          <div className="mb-12">
+            <Card className="bg-gradient-to-r from-gray-100 to-gray-200 border-dashed border-2 border-gray-300">
+              <CardContent className="p-8 text-center">
+                <Icon name="Monitor" size={48} className="mx-auto text-gray-400 mb-4" />
+                <p className="text-lg font-medium text-gray-600 mb-2">Рекламное место 728x90</p>
+                <p className="text-sm text-gray-500">Здесь может быть ваша реклама спортивного питания, экипировки или тренажеров</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Blog Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {blogPosts.slice(1).map((post, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all hover:scale-105">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <Badge className="mb-3 bg-fitness-blue">{post.category}</Badge>
+                  <h4 className="text-lg font-bold text-fitness-dark mb-3 line-clamp-2">{post.title}</h4>
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                    <span>{post.author}</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <Button size="sm" variant="outline" className="w-full border-fitness-orange text-fitness-orange hover:bg-fitness-orange hover:text-white">
+                    Читать статью
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Sidebar Ad */}
+          <div className="mt-12 grid md:grid-cols-4 gap-8">
+            <div className="md:col-span-3">
+              <h4 className="text-2xl font-bold text-fitness-dark mb-6">Популярные темы</h4>
+              <div className="flex flex-wrap gap-3">
+                {["Домашние тренировки", "Правильное питание", "Кардио", "Силовые", "Растяжка", "Йога", "Похудение", "Набор массы"].map((tag, index) => (
+                  <Badge key={index} variant="outline" className="cursor-pointer hover:bg-fitness-orange hover:text-white transition-colors">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            <div>
+              <Card className="bg-gradient-to-b from-fitness-orange/10 to-fitness-blue/10 border-dashed border-2 border-gray-300">
+                <CardContent className="p-6 text-center">
+                  <Icon name="Smartphone" size={32} className="mx-auto text-gray-400 mb-3" />
+                  <p className="text-sm font-medium text-gray-600 mb-1">Боковой баннер</p>
+                  <p className="text-xs text-gray-500">300x250</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
