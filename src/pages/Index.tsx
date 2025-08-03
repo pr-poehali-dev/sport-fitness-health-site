@@ -227,23 +227,144 @@ export default function Index() {
             Программы тренировок
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {workoutPrograms.map((program, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all hover:scale-105">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <Icon name={program.icon as any} size={32} className="text-fitness-orange" />
-                    <Badge variant="outline">{program.level}</Badge>
-                  </div>
-                  <CardTitle className="text-fitness-dark">{program.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{program.duration}</p>
-                  <Button className="w-full bg-gradient-to-r from-fitness-orange to-red-500">
-                    Начать
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {/* First Program */}
+            <Card className="hover:shadow-xl transition-all hover:scale-105">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Icon name={workoutPrograms[0].icon as any} size={32} className="text-fitness-orange" />
+                  <Badge variant="outline">{workoutPrograms[0].level}</Badge>
+                </div>
+                <CardTitle className="text-fitness-dark">{workoutPrograms[0].name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">{workoutPrograms[0].duration}</p>
+                <Button className="w-full bg-gradient-to-r from-fitness-orange to-red-500">
+                  Начать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad in Programs */}
+            <Card className="hover:shadow-lg transition-all border-2 border-dashed border-yellow-400 bg-gradient-to-br from-yellow-50 to-orange-50">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Icon name="ShoppingCart" size={32} className="text-yellow-600" />
+                  <Badge className="bg-yellow-500 text-white">Реклама</Badge>
+                </div>
+                <CardTitle className="text-fitness-dark">Спортивная форма</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Комфортная одежда для тренировок. Скидка 40%</p>
+                <Button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500">
+                  Купить
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Second Program */}
+            <Card className="hover:shadow-xl transition-all hover:scale-105">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Icon name={workoutPrograms[1].icon as any} size={32} className="text-fitness-orange" />
+                  <Badge variant="outline">{workoutPrograms[1].level}</Badge>
+                </div>
+                <CardTitle className="text-fitness-dark">{workoutPrograms[1].name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">{workoutPrograms[1].duration}</p>
+                <Button className="w-full bg-gradient-to-r from-fitness-orange to-red-500">
+                  Начать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Third Program */}
+            <Card className="hover:shadow-xl transition-all hover:scale-105">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Icon name={workoutPrograms[2].icon as any} size={32} className="text-fitness-orange" />
+                  <Badge variant="outline">{workoutPrograms[2].level}</Badge>
+                </div>
+                <CardTitle className="text-fitness-dark">{workoutPrograms[2].name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">{workoutPrograms[2].duration}</p>
+                <Button className="w-full bg-gradient-to-r from-fitness-orange to-red-500">
+                  Начать
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Second row with more native ads */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {/* Fourth Program */}
+            <Card className="hover:shadow-xl transition-all hover:scale-105">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Icon name={workoutPrograms[3].icon as any} size={32} className="text-fitness-orange" />
+                  <Badge variant="outline">{workoutPrograms[3].level}</Badge>
+                </div>
+                <CardTitle className="text-fitness-dark">{workoutPrograms[3].name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">{workoutPrograms[3].duration}</p>
+                <Button className="w-full bg-gradient-to-r from-fitness-orange to-red-500">
+                  Начать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad - Coaching */}
+            <Card className="hover:shadow-lg transition-all border-2 border-dashed border-indigo-400 bg-gradient-to-br from-indigo-50 to-purple-50">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Icon name="Users" size={32} className="text-indigo-600" />
+                  <Badge className="bg-indigo-500 text-white">Реклама</Badge>
+                </div>
+                <CardTitle className="text-fitness-dark">Персональный тренер</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Онлайн тренировки с профи. Первое занятие бесплатно</p>
+                <Button className="w-full bg-gradient-to-r from-indigo-500 to-purple-500">
+                  Записаться
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad - Equipment */}
+            <Card className="hover:shadow-lg transition-all border-2 border-dashed border-red-400 bg-gradient-to-br from-red-50 to-pink-50">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Icon name="Zap" size={32} className="text-red-600" />
+                  <Badge className="bg-red-500 text-white">Реклама</Badge>
+                </div>
+                <CardTitle className="text-fitness-dark">Фитнес-браслет</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Отслеживай пульс, калории, сон. Топ продаж 2024</p>
+                <Button className="w-full bg-gradient-to-r from-red-500 to-pink-500">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad - Supplements */}
+            <Card className="hover:shadow-lg transition-all border-2 border-dashed border-teal-400 bg-gradient-to-br from-teal-50 to-cyan-50">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Icon name="Pill" size={32} className="text-teal-600" />
+                  <Badge className="bg-teal-500 text-white">Реклама</Badge>
+                </div>
+                <CardTitle className="text-fitness-dark">Витамины для спорта</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Комплекс для активных людей. Больше энергии каждый день</p>
+                <Button className="w-full bg-gradient-to-r from-teal-500 to-cyan-500">
+                  Купить
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -255,17 +376,120 @@ export default function Index() {
             Питание и БЖУ
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {nutritionTips.map((tip, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Icon name={tip.icon as any} size={40} className="mx-auto text-fitness-blue" />
-                  <CardTitle className="text-fitness-dark">{tip.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold text-fitness-orange">{tip.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {/* First Nutrition Tip */}
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Icon name={nutritionTips[0].icon as any} size={40} className="mx-auto text-fitness-blue" />
+                <CardTitle className="text-fitness-dark">{nutritionTips[0].title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-fitness-orange">{nutritionTips[0].description}</p>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad in Nutrition */}
+            <Card className="text-center hover:shadow-lg transition-shadow border-2 border-dashed border-orange-400 bg-gradient-to-br from-orange-50 to-yellow-50">
+              <CardHeader>
+                <Icon name="Apple" size={40} className="mx-auto text-orange-600" />
+                <div className="mt-2">
+                  <Badge className="bg-orange-500 text-white mb-2">Реклама</Badge>
+                  <CardTitle className="text-fitness-dark">Здоровые снеки</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-orange-600 mb-3">Натуральные батончики без сахара</p>
+                <Button size="sm" className="bg-gradient-to-r from-orange-500 to-yellow-500">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Second Nutrition Tip */}
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Icon name={nutritionTips[1].icon as any} size={40} className="mx-auto text-fitness-blue" />
+                <CardTitle className="text-fitness-dark">{nutritionTips[1].title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-fitness-orange">{nutritionTips[1].description}</p>
+              </CardContent>
+            </Card>
+
+            {/* Third Nutrition Tip */}
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Icon name={nutritionTips[2].icon as any} size={40} className="mx-auto text-fitness-blue" />
+                <CardTitle className="text-fitness-dark">{nutritionTips[2].title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-fitness-orange">{nutritionTips[2].description}</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Second row of nutrition with more ads */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {/* Fourth Nutrition Tip */}
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Icon name={nutritionTips[3].icon as any} size={40} className="mx-auto text-fitness-blue" />
+                <CardTitle className="text-fitness-dark">{nutritionTips[3].title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-fitness-orange">{nutritionTips[3].description}</p>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad - Meal Planning */}
+            <Card className="text-center hover:shadow-lg transition-shadow border-2 border-dashed border-emerald-400 bg-gradient-to-br from-emerald-50 to-green-50">
+              <CardHeader>
+                <Icon name="ChefHat" size={40} className="mx-auto text-emerald-600" />
+                <div className="mt-2">
+                  <Badge className="bg-emerald-500 text-white mb-2">Реклама</Badge>
+                  <CardTitle className="text-fitness-dark">Планы питания</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-emerald-600 mb-3">Готовые рационы от диетологов</p>
+                <Button size="sm" className="bg-gradient-to-r from-emerald-500 to-green-500">
+                  Выбрать план
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad - Kitchen Scale */}
+            <Card className="text-center hover:shadow-lg transition-shadow border-2 border-dashed border-blue-400 bg-gradient-to-br from-blue-50 to-cyan-50">
+              <CardHeader>
+                <Icon name="Scale" size={40} className="mx-auto text-blue-600" />
+                <div className="mt-2">
+                  <Badge className="bg-blue-500 text-white mb-2">Реклама</Badge>
+                  <CardTitle className="text-fitness-dark">Кухонные весы</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-blue-600 mb-3">Точное взвешивание продуктов</p>
+                <Button size="sm" className="bg-gradient-to-r from-blue-500 to-cyan-500">
+                  Купить
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad - Recipe Book */}
+            <Card className="text-center hover:shadow-lg transition-shadow border-2 border-dashed border-pink-400 bg-gradient-to-br from-pink-50 to-rose-50">
+              <CardHeader>
+                <Icon name="BookOpen" size={40} className="mx-auto text-pink-600" />
+                <div className="mt-2">
+                  <Badge className="bg-pink-500 text-white mb-2">Реклама</Badge>
+                  <CardTitle className="text-fitness-dark">Кулинарная книга</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-pink-600 mb-3">200+ рецептов для спортсменов</p>
+                <Button size="sm" className="bg-gradient-to-r from-pink-500 to-rose-500">
+                  Скачать
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -312,65 +536,175 @@ export default function Index() {
             </Card>
           </div>
 
-          {/* Ad Block */}
-          <div className="mb-12">
-            <Card className="bg-gradient-to-r from-gray-100 to-gray-200 border-dashed border-2 border-gray-300">
-              <CardContent className="p-8 text-center">
-                <Icon name="Monitor" size={48} className="mx-auto text-gray-400 mb-4" />
-                <p className="text-lg font-medium text-gray-600 mb-2">Рекламное место 728x90</p>
-                <p className="text-sm text-gray-500">Здесь может быть ваша реклама спортивного питания, экипировки или тренажеров</p>
+
+
+          {/* Blog Grid with Native Ads */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* First Article */}
+            <Card className="overflow-hidden hover:shadow-xl transition-all hover:scale-105">
+              <div className="aspect-video overflow-hidden">
+                <img 
+                  src={blogPosts[1].image} 
+                  alt={blogPosts[1].title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-fitness-blue">{blogPosts[1].category}</Badge>
+                <h4 className="text-lg font-bold text-fitness-dark mb-3 line-clamp-2">{blogPosts[1].title}</h4>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{blogPosts[1].excerpt}</p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                  <span>{blogPosts[1].author}</span>
+                  <span>{blogPosts[1].readTime}</span>
+                </div>
+                <Button size="sm" variant="outline" className="w-full border-fitness-orange text-fitness-orange hover:bg-fitness-orange hover:text-white">
+                  Читать статью
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad Card */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all border-2 border-dashed border-fitness-orange/30 bg-gradient-to-br from-fitness-orange/5 to-fitness-blue/5">
+              <div className="aspect-video bg-gradient-to-br from-fitness-orange/20 to-fitness-blue/20 flex items-center justify-center">
+                <Icon name="Zap" size={48} className="text-fitness-orange" />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-fitness-orange text-white">Реклама</Badge>
+                <h4 className="text-lg font-bold text-fitness-dark mb-3">Супер протеин для набора массы</h4>
+                <p className="text-sm text-muted-foreground mb-4">Научно доказанная формула для быстрого роста мышц. Скидка 30% только сегодня!</p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                  <span>Спортивное питание</span>
+                  <span className="text-fitness-orange font-bold">-30%</span>
+                </div>
+                <Button size="sm" className="w-full bg-gradient-to-r from-fitness-orange to-red-500">
+                  Узнать больше
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Second Article */}
+            <Card className="overflow-hidden hover:shadow-xl transition-all hover:scale-105">
+              <div className="aspect-video overflow-hidden">
+                <img 
+                  src={blogPosts[2].image} 
+                  alt={blogPosts[2].title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-fitness-blue">{blogPosts[2].category}</Badge>
+                <h4 className="text-lg font-bold text-fitness-dark mb-3 line-clamp-2">{blogPosts[2].title}</h4>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{blogPosts[2].excerpt}</p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                  <span>{blogPosts[2].author}</span>
+                  <span>{blogPosts[2].readTime}</span>
+                </div>
+                <Button size="sm" variant="outline" className="w-full border-fitness-orange text-fitness-orange hover:bg-fitness-orange hover:text-white">
+                  Читать статью
+                </Button>
               </CardContent>
             </Card>
           </div>
 
-          {/* Blog Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {blogPosts.slice(1).map((post, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all hover:scale-105">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
+          {/* Additional Articles Row with Native Ad */}
+          <div className="grid md:grid-cols-3 gap-8 mt-8">
+            {/* Third Article */}
+            <Card className="overflow-hidden hover:shadow-xl transition-all hover:scale-105">
+              <div className="aspect-video overflow-hidden">
+                <img 
+                  src={blogPosts[3].image} 
+                  alt={blogPosts[3].title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-fitness-blue">{blogPosts[3].category}</Badge>
+                <h4 className="text-lg font-bold text-fitness-dark mb-3 line-clamp-2">{blogPosts[3].title}</h4>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{blogPosts[3].excerpt}</p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                  <span>{blogPosts[3].author}</span>
+                  <span>{blogPosts[3].readTime}</span>
                 </div>
-                <CardContent className="p-6">
-                  <Badge className="mb-3 bg-fitness-blue">{post.category}</Badge>
-                  <h4 className="text-lg font-bold text-fitness-dark mb-3 line-clamp-2">{post.title}</h4>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
-                    <span>{post.author}</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <Button size="sm" variant="outline" className="w-full border-fitness-orange text-fitness-orange hover:bg-fitness-orange hover:text-white">
-                    Читать статью
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                <Button size="sm" variant="outline" className="w-full border-fitness-orange text-fitness-orange hover:bg-fitness-orange hover:text-white">
+                  Читать статью
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad Card 2 */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all border-2 border-dashed border-fitness-blue/30 bg-gradient-to-br from-fitness-blue/5 to-fitness-orange/5">
+              <div className="aspect-video bg-gradient-to-br from-fitness-blue/20 to-fitness-orange/20 flex items-center justify-center">
+                <Icon name="Dumbbell" size={48} className="text-fitness-blue" />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-fitness-blue text-white">Реклама</Badge>
+                <h4 className="text-lg font-bold text-fitness-dark mb-3">Домашний тренажер №1</h4>
+                <p className="text-sm text-muted-foreground mb-4">Компактный тренажер для всего тела. Эффективные тренировки дома за 20 минут.</p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                  <span>Спортивное оборудование</span>
+                  <span className="text-fitness-blue font-bold">Хит продаж</span>
+                </div>
+                <Button size="sm" className="w-full bg-gradient-to-r from-fitness-blue to-blue-500">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Native Ad Card 3 - App/Service */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all border-2 border-dashed border-green-500/30 bg-gradient-to-br from-green-50 to-blue-50">
+              <div className="aspect-video bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
+                <Icon name="Smartphone" size={48} className="text-green-600" />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-green-600 text-white">Реклама</Badge>
+                <h4 className="text-lg font-bold text-fitness-dark mb-3">Приложение для тренировок</h4>
+                <p className="text-sm text-muted-foreground mb-4">Персональные программы тренировок с ИИ-тренером. Бесплатная пробная неделя.</p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                  <span>Мобильное приложение</span>
+                  <span className="text-green-600 font-bold">Бесплатно</span>
+                </div>
+                <Button size="sm" className="w-full bg-gradient-to-r from-green-600 to-green-500">
+                  Скачать
+                </Button>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Sidebar Ad */}
-          <div className="mt-12 grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-3">
-              <h4 className="text-2xl font-bold text-fitness-dark mb-6">Популярные темы</h4>
-              <div className="flex flex-wrap gap-3">
-                {["Домашние тренировки", "Правильное питание", "Кардио", "Силовые", "Растяжка", "Йога", "Похудение", "Набор массы"].map((tag, index) => (
-                  <Badge key={index} variant="outline" className="cursor-pointer hover:bg-fitness-orange hover:text-white transition-colors">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
+          {/* Tags and Native Content Ad */}
+          <div className="mt-12">
+            <h4 className="text-2xl font-bold text-fitness-dark mb-6">Популярные темы</h4>
+            <div className="flex flex-wrap gap-3 mb-8">
+              {["Домашние тренировки", "Правильное питание", "Кардио", "Силовые", "Растяжка", "Йога", "Похудение", "Набор массы"].map((tag, index) => (
+                <Badge key={index} variant="outline" className="cursor-pointer hover:bg-fitness-orange hover:text-white transition-colors">
+                  {tag}
+                </Badge>
+              ))}
             </div>
-            <div>
-              <Card className="bg-gradient-to-b from-fitness-orange/10 to-fitness-blue/10 border-dashed border-2 border-gray-300">
-                <CardContent className="p-6 text-center">
-                  <Icon name="Smartphone" size={32} className="mx-auto text-gray-400 mb-3" />
-                  <p className="text-sm font-medium text-gray-600 mb-1">Боковой баннер</p>
-                  <p className="text-xs text-gray-500">300x250</p>
-                </CardContent>
-              </Card>
-            </div>
+            
+            {/* In-content Native Ad */}
+            <Card className="mb-8 border-2 border-dashed border-purple-300 bg-gradient-to-r from-purple-50 to-pink-50 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
+                      <Icon name="Heart" size={28} className="text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <Badge className="mb-2 bg-purple-600 text-white">Реклама</Badge>
+                    <h4 className="text-lg font-bold text-fitness-dark mb-1">Курс "Здоровое питание за 30 дней"</h4>
+                    <p className="text-sm text-muted-foreground mb-3">Измени своё тело и здоровье всего за месяц с профессиональным планом питания</p>
+                    <div className="flex items-center gap-4">
+                      <span className="text-xs text-purple-600 font-bold">4.9★ (2,341 отзыв)</span>
+                      <span className="text-xs text-muted-foreground">Скидка 50% до конца недели</span>
+                    </div>
+                  </div>
+                  <Button className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-pink-500 hover:to-purple-600">
+                    Получить курс
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
